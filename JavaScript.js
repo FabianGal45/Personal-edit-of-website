@@ -1,9 +1,16 @@
-
 // Fabian Gal
 
 //Most of this code has been inspired from https://www.w3schools.com/, We have tried to look for similar code but unfortunately, in most cases it was irrelevant or too advanced for us to understand. If any content has been copied, there are references available in the comments.
 
 // https://stackoverflow.com/questions/5767325/how-can-i-remove-a-specific-item-from-an-array#:~:text=var%20value%20%3D%20array.splice(,of%20the%20item%20as%20well).
+
+
+//   1   |   2   |   3
+// ------|-------|-------
+//   4   |   5   |   6
+// ------|-------|-------
+//   7   |   8   |   9
+
 
 const playebleSlots = [1,2,3,4,5,6,7,8,9]; //This is the enrire grid 1 to 9
 console.log(playebleSlots); // All console logs are used to observe the progress and errors
@@ -292,10 +299,10 @@ function checkForWinPlayer(){
         setTimeout(function(){ computerTurn(); }, 400); //This lets the computer to play after 400 ms If the player did not win. 
         showOnClick.classList.add("disabled"); //this prevents the cell from being clicked again
     }
-    console.log(playerWon);
+    console.log("Player won: " + playerWon);
     if(playerWon == true){
         $('#modal').modal('show');
-        console.log("This will trigger the  modal");
+        // console.log("This will trigger the  modal");
     }
 }
 // this fuction will tell which combination the computer won with
@@ -333,12 +340,12 @@ function checkForWinComputer(){
         blockPlayerFromSelecting();
         computerWon= true;
     }else{
-        console.log("Computer did not win yet.")
+        console.log("Computer won: " + computerWon);
     }
     if(computerWon == true){
         document.getElementById("winningText").innerHTML = "You lost."
         $('#modal').modal('show');
-        console.log("This will trigger the  modal");
+        // console.log("This will trigger the  modal");
     }
 }
 
