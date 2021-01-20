@@ -1,0 +1,422 @@
+/* Most of this file has been modified by Fabian Gal, unless specified by a comment otherwise.
+
+Emiraldo Fernandes and Fawas Omoshonwon also contributed. Their contribution is noted in comments.*/
+/* Global */
+
+p {
+    font-family: 'Caladea', serif;
+}
+
+h1, h2, h3, h4, h5, h6{
+    font-family: 'Bitter', serif;
+}
+
+
+/* Navigation bar - Fabian Gal*/
+body, html {
+  height: 100%;
+}
+
+.logo img{
+    height: 35px;
+}
+
+.navbar{
+    background-color: rgb(36, 36, 36);
+}
+
+.navbar-brand{
+    padding: 0 0 !important; /* took away some unnecessary padding added in by bootstrap*/
+}
+
+a.nav-link:hover{
+    background-color: #2d2d2d;
+}
+
+
+
+/* Main content - Fabian Gal*/
+
+.main-background-image{
+    height: 700px;
+    background-image: url(./images/pexels-mateusz-salaciak-4275885-Medium.jpg); /*Image taken from: https://www.pexels.com/photo/brown-wooden-house-on-green-grass-field-near-green-trees-and-mountains-4275885/ */
+    background-size: cover;
+    background-size: no-repeat;
+    background-position-y: center;
+    background-position-x: center;
+    background-position: fixed;
+
+}
+
+.main-content{
+    color: white;
+    margin-left: 10%;
+    padding-top: 100px;
+}
+
+.main-content h1{
+    text-shadow: 0px 0px 20px #000000, 0px 0px 10px #000000;
+}
+
+.main-content img{
+    height: 200px;
+    width: 200px;
+    margin-top: 30px;
+    margin-left: 5%;
+    box-shadow: 0px 0px 20px #000000, 0px 0px 10px #221209;
+}
+
+
+
+
+
+/* Galleries buttons for the carousel - homepage - Fabian Gal*/
+
+.galleries .btn{
+    margin: 0 5px;
+    background-color: #545b62;
+    width: 220px;
+}
+
+.galleries .btn:hover{
+    background-color: #494e53;
+}
+
+.galleries{
+    margin: 30px 0;
+}
+
+
+
+
+
+/* Carousel items and images - in homepage - Fabian Gal*/
+
+.carousel-item h3{
+    color: white;
+}
+
+.carousel-item .row{
+    margin-bottom: 30px;
+}
+
+.carousel-item{
+    padding: 0 7%;
+}
+
+.carousel-inner{
+    background-color: rgb(36, 36, 36);
+    padding: 30px 0 25px 0;
+}
+
+a.carousel-control-prev, a.carousel-control-next{
+    width: 8%; /* Made the buttons a procentage to change according to the page size */
+}
+
+.blank-space{
+    height: 50px;
+}
+
+.overlay-container {
+    position: relative;
+}
+
+.overlay-container .image-in-carousel{
+    display: block;
+}
+
+/* Showing the references of the images */
+/* Inspired from https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_image_overlay_title */
+.overlay-container .overlay{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    text-align:center;
+    padding: 5px;
+    background-color: rgb(0, 0, 0, 0.8);
+    opacity: 0;
+    transition-duration: 0.4s;
+    transition-timing-function: ease-in-out;
+}
+
+.overlay-container:hover .overlay{
+    opacity: 1;
+}
+
+.overlay-container .overlay p, .overlay-container .overlay a{
+    color: white;
+    margin-bottom: 0;
+}
+
+
+
+
+
+
+
+/* About John Doe - Fabian Gal*/
+
+.about-John-Doe {
+    background-color: rgb(241, 241, 241);
+}
+
+.about-John-Doe .image{
+    height: 200px;
+}
+
+.about-John-Doe div.row{
+    padding-top: 30px;
+}
+
+.about-John-Doe .list-group-item{
+    background-color: rgb(241, 241, 241);
+}
+
+.about-John-Doe h5{
+    margin-bottom: 20px;
+}
+
+.about-John-Doe .about{
+    height: 349;
+}
+
+/* Call to action buttons in about section */
+.about-John-Doe .col-md a{
+    padding: 10px 0;
+    margin: 0 20px;
+    margin-bottom: 30px;
+    border-radius: 3px;
+    background-color: rgb(36, 36, 36);
+    color: white;
+    opacity: 0.5;
+}
+
+.about-John-Doe .col-md a:hover{
+    text-decoration: none;
+    opacity: 1;
+    transition-duration: 0.3s;
+}
+
+
+
+
+
+/*Contact page - by Emiraldo Fernandes*/
+
+.margin-side{
+	margin: 0 5%;
+}
+
+/* Gallery page - Fawas Omoshonwon*/
+.container.gallery-container {
+    border-radius: 0;
+}
+
+.tz-gallery .lightbox img {
+    width: 100%;
+    margin-bottom: 30px;
+    transition: 0.2s ease-in-out;
+}
+
+.tz-gallery img {
+    border-radius: 4px;
+}
+
+
+
+
+
+
+
+/* Tic Tac Toe Game  - Fabian Gal*/
+
+
+
+.game-grid{
+    height: 483px;
+    width: 483px;
+    margin: 0 auto;
+    background-image: url(./images/Game-images/grid.png);
+    background-repeat: no-repeat;
+    background-position-y: center;
+    background-position-x: center;
+}
+
+.row-board .game-cell{
+    float: left;
+}
+
+.game-cell{
+    position: relative;
+    height: 159px;
+    width: 161px;
+}
+.game-grid-line{
+    width: 14px;
+}
+/* top 158 marbot 14
+middle 139
+*/
+
+.game-cell img{
+    position: absolute;
+    top: 40px;
+    right: 40px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.game-hide-x{
+    display:none;
+}
+
+.game-hide-o{
+    display: none;
+}
+
+.game-cell:hover {
+    cursor: pointer;
+}
+
+
+/* this class will not allow the user to interract for the time the compute's turn is due */
+/* https://stackoverflow.com/questions/15207177/disable-button-with-timeout */
+
+div.disabled { 
+    pointer-events: none; 
+    -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; 
+    user-select: none;          
+}
+div.disabled *:focus { outline: 0; }
+
+
+
+
+
+
+
+
+/* -- Responsiveness --
+   !!! Only add content in here if you need it to be responsive, any other css content should be placed above !!!
+   All the content in here has been edited by Fabian Gal unless specified otherwise by a comment
+*/
+
+/* Mobile size */
+@media (max-width: 600px) {
+    .navbar .nav-item a{
+        padding: 20px 0; /* Increased the size of the navbar buttons to make them easyer to press and reduce the missclicks*/
+    }
+
+    .main-background-image{
+        height: 540px;
+        background-image: url(./images/pexels-mateusz-salaciak-4275885-Small.webp); /* Change the image to a smaller size one to reduce the loading speed and because there is no need for a large image on mobile. Image taken from: https://www.pexels.com/photo/brown-wooden-house-on-green-grass-field-near-green-trees-and-mountains-4275885/ */
+    }
+
+    .main-content{
+        margin: 0; /*Took away the margin to allow the images and text be displayed in the center*/
+    }
+
+    .main-content img{
+        display: block;
+        margin-left: auto;
+        margin-right: auto; /*placed the image on the center in the main content*/
+    }
+
+    .main-content h1{
+        text-align: center; /* placed the text in center in the main content*/
+    }
+
+
+
+    /* Carousel */
+    .carousel-inner{
+        padding: 0;
+    }
+
+    .carousel-item{
+        padding: 0;
+    }
+
+    .carousel-item div.row{
+        margin: 0;
+    }
+
+    div.col{
+        padding: 0;
+    }
+
+    .overlay-container .overlay{
+        padding-bottom: 25px; /* Added padding to raise up the text above the carousel indicators in homepage*/
+    }
+
+    .hide-on-mobile{
+        display: none !important; /*This class hides the content/images I do not want on mobile*/
+    }
+
+    div.carousel-inner{
+        padding: 0;
+    }
+
+    ol.carousel-indicators{
+        margin: 0;
+    }
+
+
+
+    /* About John Doe */
+    .about-John-Doe .col-md a{
+        padding: 15px 0;
+    }
+
+    .about-John-Doe .about{
+        margin-bottom: 30px;
+    }
+
+    .about-John-Doe h5, .about-John-Doe .about p{
+        text-align: center;
+    }
+
+
+	/* this was made by Emiraldo*/
+	/*For centering the placeholder*/
+	.placeholder{
+
+		display: center;
+	}
+
+
+
+
+
+
+
+
+
+
+
+}
+
+
+@media (max-width: 950px) {
+    .hide-on-tablet{
+        display: none !important; /* Class that hides the content/row I do not want showing on tablet size, mostly to correspond with the wireframe*/
+    }
+
+    /* Placed this here as the image in the about section would overlap with the text */
+    .about-John-Doe div.col-md-3{
+        display: none !important;
+    }
+}
+
+
+
+
+/* Laptop/Desktop size */
+
+@media (min-width: 1200px) {
+
+}
+
+@media (min-width: 1555px) {
+
+}

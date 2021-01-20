@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!--This meta tag allows the conversion of responsive layout to mobile devices-->
+        <meta name="description" content="This website has been built as an group assignment at NCI. The website has been built for a photographer client.">
+        <meta name="author" content="Fabian Gal, Emiraldo Fernandes, Fawas Omoshonwon">
+        <link rel="icon" href="images/favicon.png" sizes="32x32" type="image/png">
+        <meta name="robots" content="follow">
+        <meta name="keywords" content="Photography, freelance, weddings, family events, pictures, nature, portraits">
+        <title>Tic Tac Toe Game</title>
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Bitter:wght@700&family=Caladea&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="styles.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    </head>
+    <body>
+        <!-- Bootstrap navbar -->
+        <nav class="navbar navbar-expand-sm navbar-dark">
+            <a class="logo navbar-brand" href="index.html"><img src="images/logo3.png" alt="logo"></a> <!--This is the logo-->
+            <a class="current-page navbar-brand" href="index.html">Home page</a> <!-- Here is going to be displayed the current page that the user is in-->
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-expanded="true" aria-label="Toggle navigation"> <!--This is the button that will show up once the website reaches mobile size-->
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            <div class="nav-right-side container flex-sm-nowrap justify-content-center">
+                <div class="collapse navbar-collapse" id="navbarNavDropdown"> <!-- This section will collapse on mobile size and can be triggered by the button above -->
+                    <ul class="navbar-nav nav-fill w-100">
+                        <li class="nav-item">
+                            <a class="nav-link" href="contact.html">Contact</a> <!-- These are the links that will redirect the user to the specified page -->
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="gallery.html">Gallery</a> 
+                        </li>
+                        <li class="nav-item active">
+                            <a class="nav-link" href="game.html">Game</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="FAQ.html">FAQ</a>
+                        </li>
+                    </ul>
+                
+                </div>
+            </div>
+        </nav>
+
+        <div class="blank-space"></div>
+      <!--made by fawas-->
+
+
+        <!-- Made by Fabian gal -->
+        <div class="game-grid">
+            <div class="row-board"> <!--Images and board taken from https://www.flaticon.com/free-icon/tic-tac-toe_3716566?term=tic%20tac%20toe&page=1&position=21&related_item_id=3716566-->
+                <div id="1" class="game-cell" onclick="oneX()"> <!--https://stackoverflow.com/questions/3292774/make-a-whole-div-clickable-->
+                    <img class="o game-hide-o" src="images/Game-images/o.png" alt="Image of zero">
+                    <img class="x game-hide-x" src="images/Game-images/x.png" alt="Image of x.">
+                </div>
+
+                <div id="2" class="game-cell"  onclick="twoX()">
+                    <img class="o game-hide-o" src="images/Game-images/o.png" alt="Image of zero">
+                    <img class="x game-hide-x" src="images/Game-images/x.png" alt="Image of x.">
+                </div>
+
+                <div id="3" class="game-cell"  onclick="threeX()">
+                    <img class="o game-hide-o" src="images/Game-images/o.png" alt="Image of zero">
+                    <img class="x game-hide-x" src="images/Game-images/x.png" alt="Image of x.">
+                </div>
+            </div>
+            <div class="row-board">
+                <div id="4" class="game-cell"  onclick="fourX()">
+                    <img class="o game-hide-o" src="images/Game-images/o.png" alt="Image of zero">
+                    <img class="x game-hide-x" src="images/Game-images/x.png" alt="Image of x.">
+                </div>
+
+                <div id="5" class="game-cell"  onclick="fiveX()">
+                    <img class="o game-hide-o" src="images/Game-images/o.png" alt="Image of zero">
+                    <img class="x game-hide-x" src="images/Game-images/x.png" alt="Image of x.">
+                </div>
+
+                <div id="6" class="game-cell" onclick="sixX()">
+                    <img class="o game-hide-o" src="images/Game-images/o.png" alt="Image of zero">
+                    <img class="x game-hide-x" src="images/Game-images/x.png" alt="Image of x.">
+                </div>
+            </div>
+            <div class="row-board">
+                <div id="7" class="game-cell" onclick="sevenX()">
+                    <img class="o game-hide-o" src="images/Game-images/o.png" alt="Image of zero">
+                    <img class="x game-hide-x" src="images/Game-images/x.png" alt="Image of x.">
+                </div>
+
+                <div id="8" class="game-cell" onclick="eightX()">
+                    <img class="o game-hide-o" src="images/Game-images/o.png" alt="Image of zero">
+                    <img class="x game-hide-x" src="images/Game-images/x.png" alt="Image of x.">
+                </div>
+
+                <div id="9" class="game-cell" onclick="nineX()">
+                    <img class="o game-hide-o" src="images/Game-images/o.png" alt="Image of zero">
+                    <img class="x game-hide-x" src="images/Game-images/x.png" alt="Image of x.">
+                </div>
+            </div>
+        </div>
+
+
+        <!--Bootstrap modal-->
+        
+        
+        <!-- Player win Modal -->
+        <div class="modal fade" id="modal" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    </div>
+                    <div class="modal-body">
+                    <h1 id="winningText" class="text-center">You have won!</h1>
+                    </div>
+                    <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" onclick="refreshButton()" data-dismiss="modal">Try Again</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script src="JavaScript.js"></script>
+
+        <!-- Bootstrap Scripts -->
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>
+    </body>
+</html>

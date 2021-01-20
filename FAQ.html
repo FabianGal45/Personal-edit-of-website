@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<!-- This entire file has been modified by Fabian Gal, unless specified by a comment otherwise -->
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!--This meta tag allows the conversion of responsive layout to mobile devices-->
+        <meta name="description" content="This website has been built as an group assignment at NCI. The website has been built for a photographer client.">
+        <meta name="author" content="Emiraldo">
+        <link rel="icon" href="images/favicon.png" sizes="32x32" type="image/png">
+        <meta name="robots" content="follow">
+        <meta name="keywords" content="Photography, freelance, weddings, family events, pictures, nature, portraits">
+        <title>FAQ</title>
+        <link href="https://fonts.googleapis.com/css2?family=Bitter:wght@700&family=Caladea&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="styles.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    </head>
+    <body>
+        <!-- Bootstrap navbar -->
+        <nav class="navbar navbar-expand-sm navbar-dark">
+            <a class="logo navbar-brand" href="index.html"><img src="images/logo3.png" alt="logo"></a> <!--This is the logo-->
+            <a class="current-page navbar-brand" href="index.html">Home page</a> <!-- Here is going to be displayed the current page that the user is in-->
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-expanded="true" aria-label="Toggle navigation"> <!--This is the button that will show up once the website reaches mobile size-->
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            <div class="nav-right-side container flex-sm-nowrap justify-content-center">
+                <div class="collapse navbar-collapse" id="navbarNavDropdown"> <!-- This section will collapse on mobile size and can be triggered by the button above -->
+                    <ul class="navbar-nav nav-fill w-100">
+                        <li class="nav-item">
+                            <a class="nav-link" href="contact.html">Contact</a> <!-- These are the links that will redirect the user to the specified page -->
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="gallery.html">Gallery</a> 
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="game.html">Game</a>
+                        </li>
+                        <li class="nav-item active">
+                            <a class="nav-link" href="FAQ.html">FAQ</a>
+                        </li>
+                    </ul>
+                
+                </div>
+            </div>
+        </nav>
+		
+		<div class="blank-space"></div>
+		<div class="container justify-content-center"> <!-- Quetions and answer by Emiraldo Fernandes--->
+			<h3>General Questions:</h3>
+			</br>
+			<h5>Q: Do you deliver every image you shoot at communion/Baptism?</h5>
+			<p>A: Yes, every images are selected by customer before been delivered.</p>
+			</br>
+			<h5>Q: Do you provide video recording from any event you work on?</h5>
+			<p>A: Only if customer requires it before the event takes part.</p>
+			</br>
+			<h5>Q: Do you provide special effect images?</h5>
+			<p>A: Yes, but additional charge will be required.</p>
+			</br>
+			<h5>Q: Can I have a discount I'm a regular customer? </h5>
+			<p>A: Yes, but it depends on number of time I have shoted at you venue.</p>
+			</br>
+			<h5>Q: can I have a discount if I recomend your work to a friend or family member?</h5>
+			<p>A: Yes you can, the discount can vary from 5 to 15%.</p>
+			</br>
+			<h5>Q: What is the duration of time for a birthday party?</h5>
+			<p>A:  A birthdat party can vary from 3 to 5 hours.</p>
+			</br>
+			<h5>Q: Whre can i access my images?</h5>
+			<p>A: After the event you will receive a code via text with a link so you can accss your images.</p>
+			</br>
+			<h5>Q: What happens if i disagreed with quality of your work?</h5>
+			<p>A: We can respectful have a convversation to discust waht went wrong, what can be improved and find the best resolution to the issue. </p>
+			</br>
+			<h5>Q: Do you do destination weddings?</h5>
+			<p>A: Yes, destination weddings will be more expensive than normal as additional cost will be ivolved.</p>
+			</br>
+			<h5> How many image do you deliver from a wedding?</h5>
+			<p> Something from 60 to 80 images.</p>
+			</br>
+			<h5> What happens if we go over the contract amount of time?</h5>
+			<p> Additional cost will be required from customer.</p>
+		</div>
+		
+        <div class="blank-space"></div>
+        
+		<!-- Footer/ about section, initially made by Fabian Gal, edited by Emiraldo Fernandes  -->
+        <div class="about-John-Doe container-fluid"> <!-- This is the about section that shows at the bottom -->
+            <div class="row">
+                <div class="col-md-3 image d-none d-md-flex justify-content-end">
+                    <!-- John Doe's image from home page -->
+                    <img src="images/This-Person-Does-Not-Exist1.jpg" class="rounded" alt="John Doe"><!-- Image taken from: https://thispersondoesnotexist.com/ -->
+                </div>
+
+                <div class="col-md about d-flex flex-column justify-content-between">
+                    <!-- Information about the photographer -->
+                    <div>
+                        <h5>About me</h5>
+                        <p>Hi, I am John Doe, I am freelance photographer and editor. I excel in capturing portraits and family events and providing the best customer experience according to my past clients.</p>
+                        <p>I like to travel and use my camera a lot, I have worked at weddings, for news companies and I travel a lot to grab amazing photos. I like taking pictures of the wildlife and nature.</p> <!-- Paragraph added as per client requirements -->
+                        <p>I enjoy what I am doing, I enjoy working with people and capturing their precious moments, be it a wedding, baby shower or just that happy day you look your best and want to capture the moment in a proffessional frame.</p>
+                    </div>
+                    
+                </div>
+
+                <div class="col-md">
+
+                    <!-- Working hours as requested from the client-->
+                    <h5>Working hours</h5>
+                    <table class="table table-hover"> <!--Bootstrap Table-->
+                        <tbody>
+                          <tr>
+                            <th scope="row">Monday</th>
+                            <td>10 a.m.</td>
+                            <td>6 p.m.</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">Tuesday</th>
+                            <td>10 a.m.</td>
+                            <td>6 p.m.</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">Wednesday</th>
+                            <td>10 a.m.</td>
+                            <td>6 p.m.</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">Thursday</th>
+                            <td>10 a.m.</td>
+                            <td>6 p.m.</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">Friday</th>
+                            <td>10 a.m.</td>
+                            <td>6 p.m.</td>
+                          </tr>
+                        </tbody>
+                    </table>
+
+                </div>
+    
+            </div>
+        </div>
+
+        <!-- Bootstrap Scripts -->
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>
+    </body>
+</html>
+

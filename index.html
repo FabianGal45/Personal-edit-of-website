@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<!-- This entire file has been modified by Fabian Gal only -->
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!--This meta tag allows the conversion of responsive layout to mobile devices-->
+        <meta name="description" content="This website has been built as an group assignment at NCI. The website has been built for a photographer client.">
+        <meta name="author" content="Fabian Gal">
+        <link rel="icon" href="images/favicon.png" sizes="32x32" type="image/png">
+        <meta name="robots" content="follow">
+        <meta name="keywords" content="Photography, freelance, weddings, family events, pictures, nature, portraits">
+        <title>John Doe's Photography</title>
+        <link href="https://fonts.googleapis.com/css2?family=Bitter:wght@700&family=Caladea&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="styles.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    </head>
+    <body>
+        <!-- Bootstrap navbar -->
+        <nav class="navbar navbar-expand-sm navbar-dark">
+            <a class="logo navbar-brand" href="index.html"><img src="images/logo3.png" alt="logo"></a> <!--This is the logo-->
+            <a class="current-page navbar-brand" href="index.html">Home page</a> <!-- Here is going to be displayed the current page that the user is in-->
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-expanded="true" aria-label="Toggle navigation"> <!--This is the button that will show up once the website reaches mobile size-->
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            <div class="nav-right-side container flex-sm-nowrap justify-content-center">
+                <div class="collapse navbar-collapse" id="navbarNavDropdown"> <!-- This section will collapse on mobile size and can be triggered by the button above -->
+                    <ul class="navbar-nav nav-fill w-100">
+                        <li class="nav-item">
+                            <a class="nav-link" href="contact.html">Contact</a> <!-- These are the links that will redirect the user to the specified page -->
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="gallery.html">Gallery</a> 
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="game.html">Game</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="FAQ.html">FAQ</a>
+                        </li>
+                    </ul>
+                
+                </div>
+            </div>
+        </nav>
+
+        <!-- This is the main content that will be displayed with the image of the photographer a title and a background image -->
+        <div class="container-fluid main-background-image"> 
+            <div class="main-content">
+                <h1>John Doe's Photography</h1>
+                <img src="images/This-Person-Does-Not-Exist1.jpg" class="rounded" alt="John Doe"><!-- Image taken from: https://thispersondoesnotexist.com/ -->
+            </div>
+        </div>
+
+        <!-- These are the services the photographer offers -->
+        <div class="galleries d-flex justify-content-around"> <!-- From this section you will chose which type of gallery you want to view and the bootstrap carousel will switch accordingly-->
+            <button type="button" class="btn btn-secondary btn-lg" data-target="#carouselExampleIndicators" data-slide-to="0">Family Events</button>
+            <button type="button" class="btn btn-secondary btn-lg" data-target="#carouselExampleIndicators" data-slide-to="1">Weddings</button>
+            <button type="button" class="btn btn-secondary btn-lg" data-target="#carouselExampleIndicators" data-slide-to="2">Portraits</button>
+            <button type="button" class="btn btn-secondary btn-lg d-none d-xl-inline-block" data-target="#carouselExampleIndicators" data-slide-to="3">Travel</button> <!-- This button will only show when the website reaches XL size. Ths change has been implemented to correspond with the wireframe and only have 3 buttons show on tablet and mobile size.-->
+        </div>
+
+        <!-- Bootstrap carousel -->
+        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel"> 
+            <ol class="carousel-indicators"><!-- These are the indicators that show in the lower side of the carousel as it switches thtorugh the slides -->
+              <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+              <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+              <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+              <li data-target="#carouselExampleIndicators" data-slide-to="3" class="d-none d-xl-inline-block"></li> <!-- This indicator will only show once the website reaches XL size. This will show together with the Travel button. -->
+            </ol>
+          
+            <div class="container-fluid carousel-inner">
+                <div class="carousel-item carousel-item active"> <!-- Family events images -->
+                    <div class="row"> <!-- This is the top row --> 
+                        <div class="col"> <!-- Top-left column -->
+                            <div class="overlay-container"> <!-- I created this class and div in order to have the link of the page display over the image when hovered as I did not like the look of it being underneath. - Inspired from https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_image_overlay_title -->
+                                <div class="image-in-carousel">  
+                                    <img src="images/Family-Events/Size-Small/pexels-andreas-wohlfahrt-2456327.webp" class="w-100" id="img-swap" alt="Couple holding baby's feet">
+                                </div>
+                                <div class="overlay"> <!-- This will show a reference of the image when hoverign over -->
+                                    <p>Taken from <a href="https://www.pexels.com/photo/person-holding-baby-s-feet-2456327/">pexels.com</a></p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col hide-on-mobile"> <!-- Top-middle column - This column will hide/dissapear once it reaches mobile size to only let the first picture show-->
+                            <div class="overlay-container">
+                                <div class="image-in-carousel">
+                                    <img src="images/Family-Events/Size-Small/pexels-julia-hym-5437464.webp" class="w-100" alt="Man making a proposal in luxurious restaurant during dinner">
+                                </div>
+                                <div class="overlay"> 
+                                    <p>Taken from <a href="https://www.pexels.com/photo/anonymous-boyfriend-and-girlfriend-hugging-under-umbrella-5437464/">pexels.com</a></p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col hide-on-mobile"> <!-- Top-right column - This column will hide/dissapear once it reaches mobile size to only let the first picture show-->
+                            <div class="overlay-container">
+                                <div class="image-in-carousel">
+                                    <img src="images/Family-Events/Size-Small/pexels-vidal-balielo-jr-1682497.webp" class="w-100" alt="Two pair of hands holding a christmass present">
+                                </div>
+                                <div class="overlay"> 
+                                    <p>Taken from <a href="https://www.pexels.com/photo/family-walking-on-path-1682497/">pexels.com</a></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row hide-on-tablet"> <!-- The bottom row - This row will hide/dissapear once it reaches tablet size to correspond with the wireframe and will stay hidden on mobile as well. -->
+                        <div class="col"> <!-- Bottom-left column -->
+                            <div class="overlay-container">
+                                <div class="image-in-carousel">
+                                    <img src="images/Family-Events/Size-Small/pexels-tatiana-syrikova-3934033.webp" class="w-100" id="img-swap" alt="Couple holding baby's feet">
+                                </div>
+                                <div class="overlay"> 
+                                    <p>Taken from <a href="https://www.pexels.com/photo/man-sitting-on-bench-near-lake-3934033/">pexels.com</a></p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col"> <!-- Bottom-middle column -->
+                            <div class="overlay-container">
+                                <div class="image-in-carousel">
+                                    <img src="images/Family-Events/Size-Small/pexels-c-technical-5961887.webp" class="w-100" alt="Man making a proposal in luxurious restaurant during dinner">
+                                </div>
+                                <div class="overlay"> 
+                                    <p>Taken from <a href="https://www.pexels.com/photo/food-restaurant-man-holiday-5961887/">pexels.com</a></p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col"> <!-- Bottom-right column -->
+                            <div class="overlay-container">
+                                <div class="image-in-carousel">
+                                    <img src="images/Family-Events/Size-Small/pexels-kristina-paukshtite-3270224.webp" class="w-100" alt="Two pair of hands holding a christmass present">
+                                </div>
+                                <div class="overlay"> 
+                                    <p>Taken from <a href="https://www.pexels.com/photo/mother-holding-her-baby-3270224/">pexels.com</a></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="carousel-item"> <!-- Weddings images -->
+                    <div class="row">
+                        <div class="col">
+                            <div class="overlay-container">
+                                <div class="image-in-carousel">
+                                    <img src="images/Weddings/Size-Small/pexels-cottonbro-3951880.webp" class="w-100" id="img-swap" alt="Couple holding baby's feet">
+                                </div>
+                                <div class="overlay"> 
+                                    <p>Taken from <a href="https://www.pexels.com/photo/man-in-black-suit-jacket-holding-woman-in-white-wedding-dress-3951880/">pexels.com</a></p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col hide-on-mobile"> <!-- Will dissapear on mobile-->
+                            <div class="overlay-container">
+                                <div class="image-in-carousel">
+                                    <img src="images/Weddings/Size-Small/pexels-elijah-o'donnell-3888557.webp" class="w-100" alt="Man making a proposal in luxurious restaurant during dinner">
+                                </div>
+                                <div class="overlay"> 
+                                    <p>Taken from <a href="https://www.pexels.com/photo/woman-in-white-dress-fueling-car-during-night-3888557/">pexels.com</a></p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col hide-on-mobile"> <!-- Will dissapear on mobile-->
+                            <div class="overlay-container">
+                                <div class="image-in-carousel">
+                                    <img src="images/Weddings/Size-Small/pexels-dominika-roseclay-1244700.webp" class="w-100" alt="Two pair of hands holding a christmass present">
+                                </div>
+                                <div class="overlay"> 
+                                    <p>Taken from <a href="https://www.pexels.com/photo/bride-and-groom-kissing-near-tree-against-the-sun-photo-1244700/">pexels.com</a></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row hide-on-tablet"> <!-- The entire row disaappears on tablet size to correspond with the wireframe. It will stay hidden for mobile as well.-->
+                        <div class="col">
+                            <div class="overlay-container">
+                                <div class="image-in-carousel">
+                                    <img src="images/Weddings/Size-Small/pexels-emma-bauso-2253870.webp" class="w-100" id="img-swap" alt="Couple holding baby's feet">
+                                </div>
+                                <div class="overlay"> 
+                                    <p>Taken from <a href="https://www.pexels.com/photo/man-and-woman-kissing-2253870/">pexels.com</a></p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col">
+                            <div class="overlay-container">
+                                <div class="image-in-carousel">
+                                    <img src="images/Weddings/Size-Small/pexels-avonne-stalling-3916020.webp" class="w-100" alt="Man making a proposal in luxurious restaurant during dinner">
+                                </div>
+                                <div class="overlay"> 
+                                    <p>Taken from <a href="https://www.pexels.com/photo/close-up-photo-of-man-kissing-woman-3916020/">pexels.com</a></p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col">
+                            <div class="overlay-container">
+                                <div class="image-in-carousel">
+                                    <img src="images/Weddings/Size-Small/pexels-pixabay-372176.webp" class="w-100" alt="Two pair of hands holding a christmass present">
+                                </div>
+                                <div class="overlay"> 
+                                    <p>Taken from <a href="https://www.pexels.com/photo/adult-boutonniere-celebration-ceremony-372176/">pexels.com</a></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="carousel-item"> <!-- Portraits --> <!-- The pattern repeats and the only thing that changes is the images and the links.-->
+                    <div class="row">
+
+                        <div class="col">
+                            <div class="overlay-container">
+                                <div class="image-in-carousel">
+                                    <img src="images/Portraits/Size-Small/pexels-luidi-cardoso-4221848.webp" class="w-100" id="img-swap" alt="Couple holding baby's feet">
+                                </div>
+                                <div class="overlay"> 
+                                    <p>Taken from <a href="https://www.pexels.com/photo/serious-young-man-relaxing-in-smoky-dark-room-with-pipe-led-lamp-4221848/">pexels.com</a></p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col hide-on-mobile">
+                            <div class="overlay-container">
+                                <div class="image-in-carousel">
+                                    <img src="images/Portraits/Size-Small/pexels-cottonbro-3206114.webp" class="w-100" alt="Man making a proposal in luxurious restaurant during dinner">
+                                </div>
+                                <div class="overlay"> 
+                                    <p>Taken from <a href="https://www.pexels.com/photo/man-wearing-brown-jacket-using-smartphone-while-using-smartphone-3206114/">pexels.com</a></p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col hide-on-mobile">
+                            <div class="overlay-container">
+                                <div class="image-in-carousel">
+                                    <img src="images/Portraits/Size-Small/pexels-anderson-miranda-1719641.webp" class="w-100" alt="Two pair of hands holding a christmass present">
+                                </div>
+                                <div class="overlay"> 
+                                    <p>Taken from <a href="https://www.pexels.com/photo/woman-sitting-on-green-grass-lawn-1719641/">pexels.com</a></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row hide-on-tablet">
+                        <div class="col">
+                            <div class="overlay-container">
+                                <div class="image-in-carousel">
+                                    <img src="images/Portraits/Size-Small/pexels-ketut-subiyanto-4350057.webp" class="w-100" id="img-swap" alt="Couple holding baby's feet">
+                                </div>
+                                <div class="overlay"> 
+                                    <p>Taken from <a href="https://www.pexels.com/photo/female-barista-in-beanie-and-apron-resting-chin-on-had-4350057/">pexels.com</a></p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col">
+                            <div class="overlay-container">
+                                <div class="image-in-carousel">
+                                    <img src="images/Portraits/Size-Small/pexels-ali-pazani-2811087.webp" class="w-100" alt="Man making a proposal in luxurious restaurant during dinner">
+                                </div>
+                                <div class="overlay"> 
+                                    <p>Taken from <a href="https://www.pexels.com/photo/photo-of-woman-wearing-white-top-2811087/">pexels.com</a></p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col">
+                            <div class="overlay-container">
+                                <div class="image-in-carousel">
+                                    <img src="images/Portraits/Size-Small/pexels-teddy-tavan-4890733.webp" class="w-100" alt="Two pair of hands holding a christmass present">
+                                </div>
+                                <div class="overlay"> 
+                                    <p>Taken from <a href="https://www.pexels.com/photo/man-in-blue-knit-sweater-against-blue-wall-4890733/">pexels.com</a></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="carousel-item"> <!-- Travel - While the button for this section dissapears this section can still be accessed when the slide moves automatically or by using the left or right arrows. I did not remove this feature as I believe it is good for the users to be able to viw more of the client's work, but have the ability to select through the work that he is more likely for the client to get hired.-->
+                    <div class="row">
+                        <div class="col">
+                            <div class="overlay-container">
+                                <div class="image-in-carousel">
+                                    <img src="images/Travel/Size-Small/pexels-donald-tong-58557.webp" class="w-100" id="img-swap" alt="Couple holding baby's feet">
+                                </div>
+                                <div class="overlay"> 
+                                    <p>Taken from <a href="https://www.pexels.com/photo/landscape-lake-hd-wallpaper-58557/">pexels.com</a></p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col hide-on-mobile">
+                            <div class="overlay-container">
+                                <div class="image-in-carousel">
+                                    <img src="images/Travel/Size-Small/pexels-daniel-frank-356808.webp" class="w-100" alt="Man making a proposal in luxurious restaurant during dinner">
+                                </div>
+                                <div class="overlay"> 
+                                    <p>Taken from <a href="https://www.pexels.com/photo/action-adult-adventure-beautiful-356808/">pexels.com</a></p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col hide-on-mobile">
+                            <div class="overlay-container">
+                                <div class="image-in-carousel">
+                                    <img src="images/Travel/Size-Small/pexels-jason-steffan-2125075.webp" class="w-100" alt="Two pair of hands holding a christmass present">
+                                </div>
+                                <div class="overlay"> 
+                                    <p>Taken from <a href="https://www.pexels.com/photo/landscape-photography-of-green-and-gray-mountain-2125075/">pexels.com</a></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row hide-on-tablet">
+                        <div class="col">
+                            <div class="overlay-container">
+                                <div class="image-in-carousel">
+                                    <img src="images/Travel/Size-Small/pexels-eberhard-grossgasteiger-443696.webp" class="w-100" id="img-swap" alt="Couple holding baby's feet">
+                                </div>
+                                <div class="overlay"> 
+                                    <p>Taken from <a href="https://www.pexels.com/photo/clouds-cloudy-cold-conifers-443696/">pexels.com</a></p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col">
+                            <div class="overlay-container">
+                                <div class="image-in-carousel">
+                                    <img src="images/Travel/Size-Small/pexels-visionpic-net-2166553.webp" class="w-100" alt="Man making a proposal in luxurious restaurant during dinner">
+                                </div>
+                                <div class="overlay"> 
+                                    <p>Taken from <a href="https://www.pexels.com/photo/rock-formation-uner-blue-sky-2166553/">pexels.com</a></p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col">
+                            <div class="overlay-container">
+                                <div class="image-in-carousel">
+                                    <img src="images/Travel/Size-Small/pexels-nikolett-emmert-2908933.webp" class="w-100" alt="Two pair of hands holding a christmass present">
+                                </div>
+                                <div class="overlay"> 
+                                    <p>Taken from <a href="https://www.pexels.com/photo/photo-of-snow-capped-mountains-during-daytime-2908933/">pexels.com</a></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- These are the left and right arrows-->
+            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev"> 
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="sr-only">Next</span>
+            </a>
+        </div>
+          
+        <div class="blank-space"></div> <!-- I created this div for simplicity. I don't want to remmber each time what size was the margin I previously had in case I need a space like this again. I can just copy and paste this small div-->
+
+        <!-- Footer/about section -->
+        <div class="about-John-Doe container-fluid"> <!-- This is the about section that shows at the bottom -->
+            <div class="row">
+                <div class="col-md-3 image d-none d-md-flex justify-content-end">
+                    <!-- John Doe's image -->
+                    <img src="images/This-Person-Does-Not-Exist1.jpg" class="rounded" alt="John Doe"><!-- Image taken from: https://thispersondoesnotexist.com/ -->
+                </div>
+
+                <div class="col-md about d-flex flex-column justify-content-between">
+                    <!-- Information about the photographer -->
+                    <div>
+                        <h5>About me</h5>
+                        <p>Hi, I am John Doe, I am freelance photographer and editor. I excel in capturing portraits and family events and providing the best customer experience according to my past clients.</p>
+                        <p>I like to travel and use my camera a lot, I have worked at weddings, for news companies and I travel a lot to grab amazing photos. I like taking pictures of the wildlife and nature.</p> <!-- Paragraph added as per client requirements -->
+                        <p>I enjoy what I am doing, I enjoy working with people and capturing their precious moments, be it a wedding, baby shower or just that happy day you look your best and want to capture the moment in a proffessional frame.</p>
+                    </div>
+                    <div class="d-flex">
+                        <a class="d-flex w-100 justify-content-center" href="gallery.html">See more images</a> <!-- Call to action button where the user will be redirected to the gallery page -->
+                    </div>
+                    
+                </div>
+
+                <div class="col-md">
+
+                    <!-- Working hours -->
+                    <h5>Working hours</h5>
+                    <table class="table table-hover"> <!--Bootstrap Table-->
+                        <tbody>
+                          <tr>
+                            <th scope="row">Monday</th>
+                            <td>10 a.m.</td>
+                            <td>6 p.m.</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">Tuesday</th>
+                            <td>10 a.m.</td>
+                            <td>6 p.m.</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">Wednesday</th>
+                            <td>10 a.m.</td>
+                            <td>6 p.m.</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">Thursday</th>
+                            <td>10 a.m.</td>
+                            <td>6 p.m.</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">Friday</th>
+                            <td>10 a.m.</td>
+                            <td>6 p.m.</td>
+                          </tr>
+                        </tbody>
+                    </table>
+
+                    <a class="d-flex justify-content-center" href="contact.html">Contact me</a> <!-- Call to action button where the user will be redirected to the cotact page -->
+                </div>
+    
+            </div>
+        </div>
+
+        <!-- Bootstrap Scripts -->
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>
+    </body>
+</html>
