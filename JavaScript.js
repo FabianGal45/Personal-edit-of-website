@@ -65,6 +65,7 @@ function twoX() {
     checkForWinPlayer()
 
 }
+
 function threeX() {
 	showOnClick = document.getElementById("3");
     showOnClick.querySelector("img.x").classList.remove("game-hide-x");
@@ -104,6 +105,7 @@ function fourX() {
     checkForWinPlayer()
  
 }
+
 function fiveX() {
 	showOnClick = document.getElementById("5");
     showOnClick.querySelector("img.x").classList.remove("game-hide-x");
@@ -123,6 +125,7 @@ function fiveX() {
     checkForWinPlayer()
 
 }
+
 function sixX() {
 	showOnClick = document.getElementById("6");
     showOnClick.querySelector("img.x").classList.remove("game-hide-x");
@@ -161,6 +164,7 @@ function sevenX() {
 
     checkForWinPlayer()
 }
+
 function eightX() {
 	showOnClick = document.getElementById("8");
     showOnClick.querySelector("img.x").classList.remove("game-hide-x");
@@ -180,6 +184,7 @@ function eightX() {
     checkForWinPlayer()
 
 }
+
 function nineX() {
 	showOnClick = document.getElementById("9");
     showOnClick.querySelector("img.x").classList.remove("game-hide-x");
@@ -200,45 +205,24 @@ function nineX() {
     
 }
 
-
-
-
-// Fawas Omoshonwon
-function checkChoices(){
-	console.log("available slots: " + playebleSlots);
-	console.log(playebleSlots);
-}
-
-
-
-function computerTurn(){
-    if (playebleSlots.length > 0){
-        computerRandomChoice = playebleSlots[Math.floor(Math.random()*playebleSlots.length)];//Select a random number from the number of items left
-
-        index = playebleSlots.indexOf(computerRandomChoice);
-        if (index > -1){
-            playebleSlots.splice(index, 1);
-        }
-
-        computerChoices.push(computerRandomChoice);
-        console.log("Computer Choices: [" + computerChoices + "]");
-
-        var showComputerChoice; //place the O
-        showComputerChoice = document.getElementById(computerRandomChoice);
-        showComputerChoice.querySelector("img.o").classList.remove("game-hide-o");
-        showComputerChoice.classList.add("disabled"); // This disacbles the cell from being clicked
-
-        // console.log("computer random choice: " + computerRandomChoice);
-        console.log(playebleSlots);
-        
-        allowPlayerToSelect();
-        checkForWinComputer();
+//This blocks the player from selecting any other slot while the computer's turn is due.
+function blockPlayerFromSelecting(){
+    // console.log("Player can no longer select.");
+    for( i=0; i<playebleSlots.length; i++){
+        var disableSlots = playebleSlots[i];
+        document.getElementById(disableSlots).classList.add("disabled");
     }
 }
 
 
-// Emiraldo Fernandes
 // these are the possible winning combinations for both playerand computer
+
+//   1   |   2   |   3
+// ------|-------|-------
+//   4   |   5   |   6
+// ------|-------|-------
+//   7   |   8   |   9
+
 const h1= [1,2,3];
 const h2= [4,5,6];
 const h3= [7,8,9];
@@ -257,6 +241,8 @@ const contains = (first, second) => {
     });
     return indexArray.indexOf(-1) === -1;
 }
+
+
 // this fuction will tell which combination the player won with
 function checkForWinPlayer(){
     if (contains(h1,playerChoices) == true){
@@ -305,6 +291,80 @@ function checkForWinPlayer(){
         // console.log("This will trigger the  modal");
     }
 }
+
+
+
+function computerTurn(){
+    if (playebleSlots.length > 0){
+
+        //playPriorities
+
+        console.log(Set.difference(playerChoices, h1));
+
+
+        //Select a random number from the number of items left
+        computerRandomChoice = playebleSlots[Math.floor(Math.random()*playebleSlots.length)];
+
+        index = playebleSlots.indexOf(computerRandomChoice);
+        if (index > -1){
+            playebleSlots.splice(index, 1); // Going to take out the computer choice out of playebleSlots
+        }
+
+        computerChoices.push(computerRandomChoice);
+        console.log("Computer Choices: [" + computerChoices + "]");
+
+        var showComputerChoice; //place the O
+        showComputerChoice = document.getElementById(computerRandomChoice);
+        showComputerChoice.querySelector("img.o").classList.remove("game-hide-o");
+        showComputerChoice.classList.add("disabled"); // This disacbles the cell from being clicked
+
+        // console.log("computer random choice: " + computerRandomChoice);
+        console.log(playebleSlots);
+        
+        allowPlayerToSelect();
+        checkForWinComputer();
+    }
+}
+
+
+// Formula to find the set difference
+// https://www.tutorialspoint.com/Subtract-two-Sets-in-Javascript
+Set.difference = function(s1, s2) { 
+    if (!s1 instanceof Set || !s2 instanceof Set) {
+       console.log("The given objects are not of type Set");
+       return null;
+    }
+    let newSet = new Set();
+    s1.forEach(elem => newSet.add(elem));
+    s2.forEach(elem => newSet.delete(elem));
+    return newSet;
+}
+
+function playPriorities(){
+
+    //playerChoices - h1 = determineBlock
+    determineBlock = Set.difference(playerChoices, h1);
+
+    console.log("Determine Block" + determineBlock);
+
+
+
+
+
+
+
+}
+
+//  This removes the desable class from all the ids that are left in the playeblle slots and allows the player to continue playing.
+function allowPlayerToSelect(){
+    for( i=0; i<playebleSlots.length; i++){
+        var disableSlots = playebleSlots[i];
+        document.getElementById(disableSlots).classList.remove("disabled");
+    }
+    // console.log("Player can now select a box.");
+}
+
+
 // this fuction will tell which combination the computer won with
 function checkForWinComputer(){
     if (contains(h1,computerChoices) == true){
@@ -349,30 +409,6 @@ function checkForWinComputer(){
     }
 }
 
-//Fabian Gal -
-
-//This blocks the player from selecting any other slot while the computer's turn is due.
-function blockPlayerFromSelecting(){
-    // console.log("Player can no longer select.");
-    for( i=0; i<playebleSlots.length; i++){
-        var disableSlots = playebleSlots[i];
-        document.getElementById(disableSlots).classList.add("disabled");
-    }
-}
-
-//  This removes the desable class from all the ids that are left in the playeblle slots and allows the player to continue playing.
-function allowPlayerToSelect(){
-    for( i=0; i<playebleSlots.length; i++){
-        var disableSlots = playebleSlots[i];
-        document.getElementById(disableSlots).classList.remove("disabled");
-    }
-    // console.log("Player can now select a box.");
-}
-
-function checkButton(){
-    console.log("PlayerChoices: ["+playerChoices+"]");
-    console.log("Computer Choices: ["+computerChoices+"]");
-}
 
 // Fawas Omoshonwon
 function refreshButton() {
@@ -380,4 +416,7 @@ function refreshButton() {
 }
 
 
-
+// function checkButton(){
+//     console.log("PlayerChoices: ["+playerChoices+"]");
+//     console.log("Computer Choices: ["+computerChoices+"]");
+// }
