@@ -23,6 +23,8 @@ var computerRandomChoice;
 var computerChoices =[];
 var computerWon = false;
 var playerWon = false;
+var disableSlots;
+var showComputerChoice;
 
 
 // These functions are the boxes that are going to display the x on click. There must have been a better way to do it unfortunatelly I am not aware of it for the time being
@@ -205,6 +207,8 @@ function nineX() {
     
 }
 
+//#############################################################################
+
 //This blocks the player from selecting any other slot while the computer's turn is due.
 function blockPlayerFromSelecting(){
     // console.log("Player can no longer select.");
@@ -285,7 +289,7 @@ function checkForWinPlayer(){
         setTimeout(function(){ computerTurn(); }, 400); //This lets the computer to play after 400 ms If the player did not win. 
         showOnClick.classList.add("disabled"); //this prevents the cell from being clicked again
     }
-    console.log("Player won: " + playerWon);
+    //console.log("Player won: " + playerWon);
     if(playerWon == true){
         $('#modal').modal('show');
         // console.log("This will trigger the  modal");
@@ -297,29 +301,43 @@ function checkForWinPlayer(){
 function computerTurn(){
     if (playebleSlots.length > 0){
 
-        //playPriorities
+        // playPriorities();
+        
+        console.log("H1: ["+ h1+"]");
+        difference = h1.filter(x => !playerChoices.includes(x));
+        playebleSlots.splice(difference, 1); // Going to take out the computer choice out of playebleSlots
+        
+        console.log("Difference: "+difference);
+        console.log("comp choices: "+computerChoices);
+        console.log("playeble slots: "+playebleSlots);
 
-        console.log(Set.difference(playerChoices, h1));
-
-
-        //Select a random number from the number of items left
-        computerRandomChoice = playebleSlots[Math.floor(Math.random()*playebleSlots.length)];
-
-        index = playebleSlots.indexOf(computerRandomChoice);
-        if (index > -1){
-            playebleSlots.splice(index, 1); // Going to take out the computer choice out of playebleSlots
+        if (difference.length == 1){
+            computerChoices.push(difference);
+            showComputerChoice = document.getElementById(difference);
+            showComputerChoice.querySelector("img.o").classList.remove("game-hide-o");
+            showComputerChoice.classList.add("disabled"); // This disables the cell from being clicked
+            console.log("comp choices: "+computerChoices);
+           
         }
+        
+        // //Select a random number from the number of items left
+        // computerRandomChoice = playebleSlots[Math.floor(Math.random()*playebleSlots.length)];
 
-        computerChoices.push(computerRandomChoice);
-        console.log("Computer Choices: [" + computerChoices + "]");
+        // index = playebleSlots.indexOf(computerRandomChoice);
+        // if (index > -1){
+        //     playebleSlots.splice(index, 1); // Going to take out the computer choice out of playebleSlots
+        // }
 
-        var showComputerChoice; //place the O
-        showComputerChoice = document.getElementById(computerRandomChoice);
-        showComputerChoice.querySelector("img.o").classList.remove("game-hide-o");
-        showComputerChoice.classList.add("disabled"); // This disacbles the cell from being clicked
+        // computerChoices.push(computerRandomChoice);
+        // console.log("Computer Choices: [" + computerChoices + "]");
+        
+        // //place the O
+        // showComputerChoice = document.getElementById(computerRandomChoice);
+        // showComputerChoice.querySelector("img.o").classList.remove("game-hide-o");
+        // showComputerChoice.classList.add("disabled"); // This disables the cell from being clicked
 
-        // console.log("computer random choice: " + computerRandomChoice);
-        console.log(playebleSlots);
+        // // console.log("computer random choice: " + computerRandomChoice);
+        // console.log(playebleSlots);
         
         allowPlayerToSelect();
         checkForWinComputer();
@@ -327,33 +345,7 @@ function computerTurn(){
 }
 
 
-// Formula to find the set difference
-// https://www.tutorialspoint.com/Subtract-two-Sets-in-Javascript
-Set.difference = function(s1, s2) { 
-    if (!s1 instanceof Set || !s2 instanceof Set) {
-       console.log("The given objects are not of type Set");
-       return null;
-    }
-    let newSet = new Set();
-    s1.forEach(elem => newSet.add(elem));
-    s2.forEach(elem => newSet.delete(elem));
-    return newSet;
-}
-
-function playPriorities(){
-
-    //playerChoices - h1 = determineBlock
-    determineBlock = Set.difference(playerChoices, h1);
-
-    console.log("Determine Block" + determineBlock);
-
-
-
-
-
-
-
-}
+function playPriorities(){}
 
 //  This removes the desable class from all the ids that are left in the playeblle slots and allows the player to continue playing.
 function allowPlayerToSelect(){
@@ -400,7 +392,7 @@ function checkForWinComputer(){
         blockPlayerFromSelecting();
         computerWon= true;
     }else{
-        console.log("Computer won: " + computerWon);
+        //console.log("Computer won: " + computerWon);
     }
     if(computerWon == true){
         document.getElementById("winningText").innerHTML = "You lost."
