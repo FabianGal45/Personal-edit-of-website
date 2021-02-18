@@ -25,6 +25,7 @@ var computerWon = false;
 var playerWon = false;
 var disableSlots;
 var showComputerChoice;
+var difference;
 
 
 // These functions are the boxes that are going to display the x on click. There must have been a better way to do it unfortunatelly I am not aware of it for the time being
@@ -302,24 +303,26 @@ function computerTurn(){
     if (playebleSlots.length > 0){
 
         // playPriorities();
-        
-        console.log("H1: ["+ h1+"]");
         difference = h1.filter(x => !playerChoices.includes(x));
-        playebleSlots.splice(difference, 1); // Going to take out the computer choice out of playebleSlots
         
-        console.log("Difference: "+difference);
-        console.log("comp choices: "+computerChoices);
+        // console.log("H1: ["+ h1+"]");
+        // console.log("comp choices: "+computerChoices);
         console.log("playeble slots: "+playebleSlots);
-
+        
         if (difference.length == 1){
+            console.log("Difference: "+difference);
+            var block = playebleSlots.indexOf(difference);
+            console.log(block);
+            if (block > -1){
+                playebleSlots.splice(block,1);
+            }
             computerChoices.push(difference);
             showComputerChoice = document.getElementById(difference);
             showComputerChoice.querySelector("img.o").classList.remove("game-hide-o");
             showComputerChoice.classList.add("disabled"); // This disables the cell from being clicked
-            console.log("comp choices: "+computerChoices);
-           
         }
-        
+        console.log("playeble slots: "+playebleSlots);
+
         // //Select a random number from the number of items left
         // computerRandomChoice = playebleSlots[Math.floor(Math.random()*playebleSlots.length)];
 
